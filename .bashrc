@@ -121,6 +121,8 @@ alias rider="rider.sh"
 
 alias home='cd /home/gentleman'
 
+alias projects='cd /home/gentleman/Projects'
+
 RESET="\[\e[0m\]"
 BLUE="\[\e[38;5;33m\]"
 CYAN="\[\e[38;5;45m\]"
@@ -132,3 +134,5 @@ parse_git_branch() {
 }
 
 PS1="${BLUE}🕒 \t 📁 \w ${YELLOW}\$(parse_git_branch) ${CYAN}💻 \u@\h${RESET}\n→ "
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/.dotnet/tools"
