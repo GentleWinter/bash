@@ -117,11 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="/opt/rider/bin:$PATH"
-alias rider="rider.sh"
+alias rider="rider.sh &"
 
 alias home='cd /home/gentleman'
-
-alias projects='cd /home/gentleman/Projects'
 
 RESET="\[\e[0m\]"
 BLUE="\[\e[38;5;33m\]"
@@ -136,3 +134,12 @@ parse_git_branch() {
 PS1="${BLUE}🕒 \t 📁 \w ${YELLOW}\$(parse_git_branch) ${CYAN}💻 \u@\h${RESET}\n→ "
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$HOME/.dotnet/tools"
+
+projects() {
+    base_dir="/home/gentleman/Projects"
+    if [ -z "$1" ]; then
+        cd "$base_dir"
+    else
+        cd "$base_dir/$1"
+    fi
+}
